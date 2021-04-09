@@ -35,4 +35,15 @@ cl <- colorRampPalette(c("blue","light blue","pink","red"))(100)
 levelplot(TGr, col.regions=cl)
 # possiamo rinominare in modo diverso gli attributi e inserire un titolo al nostro plot
 levelplot(TGr,col.regions=cl,main="Summer land surface temperature",names.attr=c("July 2000","July 2005", "July 2010", "July 2015"))
-
+#stima relativa sul ghiaccio perso dal 1979 al 2007
+meltlist <- list.files(pattern="melt")
+melt_import <- lapply(meltlist,raster)
+melt <- stack(melt_import)
+levelplot(melt)
+# abbiamo un raster stack con i nomi dei vari layer
+# riusciamo a vedere lo scioglimento effettivo tra il 1979 e il 2007 
+melt_amount <- melt$X2007annual_melt - melt$X1979annual_melt
+plot(melt_amount, col=clb)
+# le zone rosse sono quelle dove c'è stato uno scioglimento del ghiaccio più alto
+levelplot(melt_amount, col.regoins=clb)
+# abbiamo un pocco nella fascia sud-ovest della Groenlandia
