@@ -7,3 +7,8 @@ setwd("C:/lab/")
 # nome del mio dataset
 Lake water quality <- raster("c_gls_LWQ300_202104010000_GLOBE_OLCI_V1.4.0.nc")
 # digitando su R Lake water quality vediamo le caratteristiche quali classe, dimensione, sistema di riferimento.
+cl <- colorRampPalette(c('light blue','green','red','yellow'))(100) 
+plot(Lake water quality, col=cl)
+# resampling
+LWQ <- aggregate(Lake water quality, fact=100)
+plot(LWQ, col=cl)
