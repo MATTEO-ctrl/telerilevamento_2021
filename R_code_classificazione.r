@@ -18,5 +18,4 @@ plot(soc$map)
 sol <- unsuperClass(solar, nClasses=20)
 plot(sol$map)
 
-plotRGB(solar, 2,1,3, stretch="lin")
-cplotRGB(solar, 3,2,1, stretch="lin")
+
