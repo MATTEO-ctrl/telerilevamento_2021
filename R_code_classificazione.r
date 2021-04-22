@@ -17,5 +17,9 @@ plot(soc$map)
 # classificazione con apprendimento non supervisionato con 20 classi.
 sol <- unsuperClass(solar, nClasses=20)
 plot(sol$map)
-
-
+# download immagine da: https://www.esa.int/ESA_Multimedia/Missions/Solar_Orbiter/(result_type)/images
+SUN <-brick("The Sun.png")
+# classificazione con apprendimento non supervisionato con 3 classi.
+sunc <- unsuperClass(SUN , nClasses=3)
+plot(sunc$map)
+# abbiamo un immagine con i livelli ben definiti in questo caso
