@@ -1,4 +1,4 @@
-# R_code_classificazione.r
+# R_code_classification.r
 # scaricato un immagine che rappresenta i diversi livelli energetici di una parte del sole 
 library(raster)
 library(RStoolbox)
