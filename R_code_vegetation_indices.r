@@ -47,3 +47,6 @@ vi <-spectralIndices(defor1, green=3, red=2, nir=1)
 plot(vi, col=cl)
 vi2 <-spectralIndices(defor2, green=3, red=2, nir=1)
 plot(vi2, col=cl)
+difndvi <- ndvi1 - ndvi2
+cld <- colorRampPalette(c('blue','white','red'))(100) 
+plot(difndvi, col=cld)
