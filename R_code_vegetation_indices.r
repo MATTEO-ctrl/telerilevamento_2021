@@ -14,7 +14,7 @@ plotRGB(defor2, r=1, g=2, b=3, stretch="lin")
 # I satelliti di uso più comune hanno intervalli di acquisizione regolari, ad esempio di 5 giorni (Sentinel 2) o 16 giorni (Landsat 8).
 # gli indici sono pertanto disponibili per più date nella stessa stagione.
 # La vegetazione assorbe la radiazione solare in diverse bande, ossia in diversi intervalli di frequenza e lunghezze d’onda, e ne riemette una percentuale differente in ciascuna di esse.
-# La percentuale di radiazione riemessa in bande specifiche, come quelle del vicino infrarosso (NIR), del rosso (RED), e dell’infrarosso a onde corte (Short Wave Infrared), indica lo stato di salute della pianta o lo stress idrico.
+# La percentuale di radiazione riemessa in bande specifiche, come quelle del vicino infrarosso (NIR), del rosso (RED), e dell’infrarosso a onde corte (Short Wave Infrared), indica lo stato di salute della pianta.
 # tempo 1
 dvi1 <- defor1$defor1.1 - defor1$defor1.2
 plot(dvi1)
@@ -41,7 +41,7 @@ plot(ndvi1, col=cl)
 ndvi2 <- (defor2$defor2.1 - defor2$defor2.2) / (defor2$defor2.1 + defor2$defor2.2)
 plot(ndvi2, col=cl)
 # RStoolbox: spectralIndices
-# per calcolare una grande varietà di indici 
+# per calcolare una grande varietà di indici come ad esempio: L’NDMI (Normalized Difference Moisture Index) che descrive il livello di stress idrico della pianta.
 library(RStoolbox)
 vi <-spectralIndices(defor1, green=3, red=2, nir=1)
 plot(vi, col=cl)
