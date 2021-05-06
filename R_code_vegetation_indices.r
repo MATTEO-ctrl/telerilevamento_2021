@@ -50,3 +50,14 @@ plot(vi2, col=cl)
 difndvi <- ndvi1 - ndvi2
 cld <- colorRampPalette(c('blue','white','red'))(100) 
 plot(difndvi, col=cld)
+# worldwide NDVI
+# install.packages("rasterdiv")
+library(rasterdiv)
+plot(copNDVI)
+# eliminiamo le masse d'acqua con la  seguente funzione
+copNDVI <- reclassify(copNDVI, cbind(253:255, NA))
+#
+library(rasterVis)
+levelplot(copNDVI)
+# mappa che mostra i diversi biomi a scala globale. I fattori ecologici che maggiormente determinano la presenza di un bioma o di un altro sono la temperatura e la piovosità.
+
