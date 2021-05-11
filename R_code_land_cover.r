@@ -59,7 +59,8 @@ percent_2006 <- c(52, 48)
 # usiamo la funzione per creare un dataframe.
 percentages <-data.frame(cover, percent_1992, percent_2006)
 percentages
-# usiamo ggplot2 per creare un grafico da indagine statistica 
+# usiamo ggplot2 per creare un grafico da indagine statistica
+# il pacchetto ggplot2 è un potente strumento per rappresentare graficamente i dati. Le iniziali del nome, gg, si riferiscono alla “Grammar of Graphics”, che è un modo di pensare le figure come una serie di layer stratificati.
 P1 <- ggplot(percentages, aes(x=cover, y=percent_1992, color=cover)) + geom_bar(stat="identity", fill="light green")
 P2 <- ggplot(percentages, aes(x=cover, y=percent_2006, color=cover)) + geom_bar(stat="identity", fill="light blue")
 # il suolo agricolo è aumentato a discapito della foresta 
